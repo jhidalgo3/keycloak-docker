@@ -2,7 +2,7 @@ version: '3'
 
 services:
     keycloak:
-        image: jboss/keycloak:6.0.1
+        image: jboss/keycloak:8.0.1
         restart: on-failure
         command:
             - "-b"
@@ -23,8 +23,8 @@ services:
             - DB_PORT=5432
             - DB_DATABASE=keycloakdb
         ports:
-            - "8089:8080"
-            - "443:8443"
+            - "9081:8080"
+            - "9443:8443"
         depends_on:
             - keycloak-db
 
